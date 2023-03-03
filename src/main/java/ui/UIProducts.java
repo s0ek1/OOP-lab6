@@ -1,11 +1,8 @@
 package ui;
-
 import processor.Product;
 import processor.ProductsList;
-
 import java.time.LocalDate;
 import java.util.Scanner;
-
 public class UIProducts implements UI {
     Product[] tempProducts = new Product[0];
     public void addNewProduct(ProductsList products, Scanner scanner) {

@@ -1,10 +1,7 @@
 package io;
-
 import processor.Product;
 import processor.ProductsList;
-
 import java.io.*;
-
 public class IOProcessor implements IO  {
     @Override
     public Product[] readObjects(String fileName) {
@@ -19,7 +16,6 @@ public class IOProcessor implements IO  {
         }
         return new Product[0];
     }
-
     @Override
     public void writeObjects(ProductsList products, String fileName) {
         try (ObjectOutputStream something = new ObjectOutputStream(new FileOutputStream(fileName))) {

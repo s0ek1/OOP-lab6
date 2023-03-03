@@ -1,11 +1,8 @@
 package main;
-
 import io.IOProcessor;
 import processor.ProductsList;
 import ui.UIProducts;
-
 import java.util.Scanner;
-
 public class Main {
     public static final String fileNameTXT = "product.txt";
     public static final String fileNameDat = "product.dat";
@@ -13,14 +10,11 @@ public class Main {
         Main main = new Main();
         main.run();
     }
-
     private void run() {
         UIProducts functions = new UIProducts();
         ProductsList products = new ProductsList();
         IOProcessor io = new IOProcessor();
-
         Scanner scanner = new Scanner(System.in);
-
         boolean status = true;
         while (status) {
             menu();
@@ -39,7 +33,6 @@ public class Main {
             }
         }
     }
-
     private void menu() {
         System.out.print("""
                             ======================== ========================

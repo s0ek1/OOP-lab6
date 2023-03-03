@@ -1,7 +1,5 @@
 package processor;
-
 import java.util.Arrays;
-
 public class ProductsList {
     private int size = 0;
     private Product[] products = new Product[10];
@@ -44,5 +42,4 @@ public class ProductsList {
         }
         return sb.toString();
     }
-
 }

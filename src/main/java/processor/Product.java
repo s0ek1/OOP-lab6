@@ -2,7 +2,6 @@ package processor;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
-
 public class Product implements Serializable {
         //Product: id, Найменування, Виробник, Ціна, Термін зберігання, Кількість.
         private int id; //id
@@ -21,7 +20,6 @@ public class Product implements Serializable {
         public void setCost(double cost) { this.cost = cost; }
         public void setTerm(LocalDate term) { this.term = term; }
         public void setCount(int count) { this.count = count; }
-
         public int getId() { return id; }
         public String getName() { return name; }
         public String getManufacturer() { return manufacturer; }
