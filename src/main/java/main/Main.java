@@ -7,6 +7,5 @@ public class Main {
     }
 
     private void run() {
-        System.out.println(1);
     }
 }
