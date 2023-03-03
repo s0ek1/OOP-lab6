@@ -39,7 +39,6 @@ public class UIProducts implements UI {
         products.addProduct(new Product(9,"Круасан",        "Ligos",    30.80, LocalDate.of(2023, 2,3),  60));
         products.addProduct(new Product(10,"Молоко",        "Ферма",    33.40, LocalDate.of(2022, 12,31),  43));
     }
-
     public void clearProductsArray(ProductsList products) {
         products.formatProductsList(tempProducts);
     }
@@ -48,5 +47,26 @@ public class UIProducts implements UI {
         System.out.print("Ведіть id для вилучення: ");
         int id = scanner.nextInt();
         products.deleteById(id);
+    }
+    @Override
+    public void printProductWithName(ProductsList products, Scanner scanner) {
+        System.out.print("Ведіть ім`я продукта: ");
+        String name = scanner.next();
+        products.printProductWithName(name);
+    }
+    @Override
+    public void printProductWithCost(ProductsList products, Scanner scanner) {
+        System.out.print("Ведіть вартісь продукта: ");
+        int cost = scanner.nextInt();
+        products.printProductWithCost(cost);
+    }
+    @Override
+    public void printProductWithTerm(ProductsList products, Scanner scanner) {
+        System.out.print("Введіт год, місяць, і день терміну: ");
+        int year = scanner.nextInt();
+        int month = scanner.nextInt();
+        int day = scanner.nextInt();
+        LocalDate date = LocalDate.of(year, month, day);
+        products.printProductWithTerm(date);
     }
 }

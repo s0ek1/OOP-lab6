@@ -30,6 +30,9 @@ public class Main {
                 case 7 -> functions.showProducts(products);
                 case 8 -> functions.fillProductArray(products);
                 case 9 -> functions.clearProductsArray(products);
+                case 10 -> functions.printProductWithName(products, scanner);
+                case 11 -> functions.printProductWithCost(products, scanner);
+                case 12 -> functions.printProductWithTerm(products, scanner);
             }
         }
     }
@@ -37,6 +40,7 @@ public class Main {
         System.out.print("""
                             ======================== ========================
                             Выберите пункт из меню:
+                            [0] - Завершити програму.
                             [1] - Зберігання даних у текстовий файл.
                             [2] - Зчитування з текстового файлу.
                             [3] - Зберігання даних у бінарний файл.
@@ -45,7 +49,10 @@ public class Main {
                             [6] - Вилучити по ID.
                             [7] - Вивести весь список продуктів.
                             [8] - Заповнити список продуктів з коду.
-                            [0] - Завершити програму.
+                            [9] - clear product.
+                            [10] - Вивести список продуктів по назві.
+                            [11] - Вивести список продуктів по вартості.
+                            [12] - Вивести список продуктів по терміну придатності.
                          :""");
     }
 }

@@ -1,4 +1,5 @@
 package processor;
+import java.time.LocalDate;
 import java.util.Arrays;
 public class ProductsList {
     private int size = 0;
@@ -8,9 +9,27 @@ public class ProductsList {
         products[size++] = product;
     }
     public Product[] getProducts() { return products; }
-    public void printProductWithName() {}
-    public void printProductWithCost() {}
-    public void printProductWithTerm() {}
+    public void printProductWithName(String name) {
+        for (int i = 0; i < size; i++) {
+            if (products[i].getName().equals(name)) {
+                System.out.println(products[i]);
+            }
+        }
+    }
+    public void printProductWithCost(double cost) {
+        for (int i = 0; i < size; i++) {
+            if ( products[i].getCost() <= cost) {
+                System.out.println(products[i]);
+            }
+        }
+    }
+    public void printProductWithTerm(LocalDate term) {
+        for (int i = 0; i < size; i++) {
+            if (products[i].getTerm().isAfter(term)) {
+                System.out.println(products[i]);
+            }
+        }
+    }
     public void deleteById(int id){
         Product[] prods = new Product[products.length-1];
         int num = 0;
