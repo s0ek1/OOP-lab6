@@ -31,16 +31,16 @@ public class ProductsList {
         }
     }
     public void deleteById(int id){
-        Product[] prods = new Product[products.length-1];
+        Product[] tempProducts = new Product[products.length-1];
         int num = 0;
         for (int i = 0, k = 0; i < size; i++) {
             if (products[i].getId() != id) {
-                prods[k] = products[i];
+                tempProducts[k] = products[i];
                 k++;
             }else num++;
         }
-        size =- num;
-        products = Arrays.copyOf(prods, prods.length);
+        size -= num;
+        products = Arrays.copyOf(tempProducts, tempProducts.length);
     }
     public void formatProductsList(Product[] tempProducts){
         products = tempProducts;
