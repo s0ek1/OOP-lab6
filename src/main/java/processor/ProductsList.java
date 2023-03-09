@@ -5,7 +5,7 @@ import java.util.Comparator;
 
 public class ProductsList {
     private int size = 0;
-    private Product[] products = new Product[12];
+    private Product[] products = new Product[10];
     public void addProduct(Product product) {
         ensureCapacity(size+1);
         products[size++] = product;

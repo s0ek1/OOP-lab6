@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="16c8368e-c7aa-4bae-a119-b179afe914ec" name="Changes" comment="maybe..?">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/product.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/IO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/IO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/IOProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/IOProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/processor/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/processor/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/processor/ProductsList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/processor/ProductsList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/UI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/UIProducts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/UIProducts.java" afterDir="false" />
-    </list>
+    <list default="true" id="16c8368e-c7aa-4bae-a119-b179afe914ec" name="Changes" comment="end" />
     <list id="fc47848e-ce7b-490f-a9a4-782aa4d61a5d" name="Changes by daniilmozzhukhin" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +100,7 @@
       <workItem from="1678105995518" duration="699000" />
       <workItem from="1678189372594" duration="7618000" />
       <workItem from="1678258306730" duration="8447000" />
-      <workItem from="1678372150583" duration="481000" />
+      <workItem from="1678372150583" duration="729000" />
     </task>
     <task id="LOCAL-00001" summary="sout">
       <created>1677863717385</created>
@@ -169,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677924967434</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="end">
+      <created>1678372857475</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1678372857475</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,7 +187,8 @@
     <MESSAGE value="sout" />
     <MESSAGE value="without exercise" />
     <MESSAGE value="maybe..?" />
-    <option name="LAST_COMMIT_MESSAGE" value="maybe..?" />
+    <MESSAGE value="end" />
+    <option name="LAST_COMMIT_MESSAGE" value="end" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
