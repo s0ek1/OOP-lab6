@@ -4,7 +4,6 @@ import processor.ProductsList;
 import java.time.LocalDate;
 import java.util.Scanner;
 public class UIProducts implements UI {
-    Product[] tempProducts = new Product[0];
     public void addNewProduct(ProductsList products, Scanner scanner) {
         System.out.print("Введіть назву: ");
         scanner.nextLine();
@@ -35,23 +34,16 @@ public class UIProducts implements UI {
         products.addProduct(new Product("Круасан",        "Ligos",    30.80, LocalDate.of(2023, 2,3),  60));
         products.addProduct(new Product("Молоко",        "Ферма",     33.40, LocalDate.of(2022, 12,31),  43));
     }
-    public void clearProductsArray(ProductsList products) {
-        products.formatProductsList(tempProducts);
-    }
     @Override
     public void deleteElementById(ProductsList products, Scanner scanner) {
         System.out.print("Ведіть id для вилучення: ");
         int id = scanner.nextInt();
         products.deleteById(id);
-    }
-    @Override
-    public void printProductWithName(ProductsList products, Scanner scanner) {
-        System.out.print("Ведіть ім`я продукта: ");
-        String name = scanner.next();
-        products.printProductWithName(name);
+        showProducts(products);
     }
     @Override
     public void printProductWithCost(ProductsList products, Scanner scanner) {
+        scanner.nextLine();
         System.out.print("Ведіть назву продукта: ");
         String name = scanner.nextLine();
         System.out.print("Ведіть вартісь продукта: ");
@@ -67,6 +59,14 @@ public class UIProducts implements UI {
         LocalDate date = LocalDate.of(year, month, day);
         products.printProductWithTerm(date);
     }
-
-
+    @Override
+    public void printProductWithSortTerm(ProductsList products) {
+        products.sortByTerm();
+        showProducts(products);
+    }
+    @Override
+    public void printProductWithSortCost(ProductsList products) {
+        products.sortByCost();
+        showProducts(products);
+    }
 }

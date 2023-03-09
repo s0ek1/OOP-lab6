@@ -11,13 +11,6 @@ public class ProductsList {
         products[size++] = product;
     }
     public Product[] getProducts() { return products; }
-    public void printProductWithName(String name) {
-        for (int i = 0; i < size; i++) {
-            if (products[i].getName().equals(name)) {
-                System.out.println(products[i]);
-            }
-        }
-    }
     public void printProductWithCost(String name, double cost) {
 
         for (int i = 0; i < size; i++) {
@@ -73,6 +66,7 @@ public class ProductsList {
 
         Arrays.sort(newArray, Comparator.comparing(Product::getTerm).reversed());
         System.arraycopy(newArray, 0, products, 0, size);
+
     }
 
     public void sortByCost() {

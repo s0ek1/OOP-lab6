@@ -31,15 +31,13 @@ public class Main {
                 case 6 -> functions.addNewProduct(products, scanner);
                 case 7 -> functions.deleteElementById(products, scanner);
                 case 8 -> functions.showProducts(products);
-
-                case 9 -> products.sortByTerm();
+                case 9 -> functions.printProductWithSortTerm(products);
                 case 10 -> functions.printProductWithCost(products,scanner);
                 case 11 -> functions.printProductWithTerm(products,scanner);
-                case 12 -> products.sortByCost();
+                case 12 -> functions.printProductWithSortCost(products);
             }
         }
     }
-
     private void menu() {
         System.out.print("""
                             ======================== ========================
