@@ -1,0 +1,76 @@
+Index: src/main/java/ui/UIProducts.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package ui;\r\nimport processor.Product;\r\nimport processor.ProductsList;\r\nimport java.time.LocalDate;\r\nimport java.util.Scanner;\r\npublic class UIProducts implements UI {\r\n    Product[] tempProducts = new Product[0];\r\n    public void addNewProduct(ProductsList products, Scanner scanner) {\r\n        System.out.print(\"Введіть id: \");\r\n        int id = scanner.nextInt();\r\n        System.out.print(\"Введіть назву: \");\r\n        scanner.nextLine();\r\n        String name = scanner.nextLine();\r\n        System.out.print(\"Введіть виробника: \");\r\n        String manufacturer = scanner.nextLine();\r\n        System.out.print(\"Введіть вартісь: \");\r\n        double cost = scanner.nextDouble();\r\n        System.out.print(\"Введіт год, місяць, і день терміну: \");\r\n        int year = scanner.nextInt();\r\n        int month = scanner.nextInt();\r\n        int day = scanner.nextInt();\r\n        System.out.print(\"Введіть кількість: \");\r\n        int count = scanner.nextInt();\r\n        products.addProduct(new Product(id, name, manufacturer, cost, LocalDate.of(year, month, day), count));\r\n    }\r\n    public void showProducts(ProductsList products) {\r\n            System.out.println(products);\r\n    }\r\n    @Override\r\n    public void fillProductArray(ProductsList products) {\r\n        products.addProduct(new Product(1,\"Шампунь\",        \"Nivea\",    111.50,LocalDate.of(2023, 2,20), 45));\r\n        products.addProduct(new Product(2,\"Шоколад\",        \"Roshen\",   38.75, LocalDate.of(2023, 2,15), 100));\r\n        products.addProduct(new Product(3,\"Кава\",           \"Jacob\",    427.60,LocalDate.of(2024, 6,7),   37));\r\n        products.addProduct(new Product(4,\"Чайек\",          \"Loyd\",     28.90, LocalDate.of(2024, 8,8),   12));\r\n        products.addProduct(new Product(5,\"Горілка\",        \"Гетьман\",  147.60,LocalDate.of(2023, 2,3),19));\r\n        products.addProduct(new Product(6,\"Масло\",          \"Ферма\",    46.50, LocalDate.of(2033, 9,30),  23));\r\n        products.addProduct(new Product(7,\"Кава\",           \"Nescafe\",  4.90,  LocalDate.of(2025, 8,19), 65));\r\n        products.addProduct(new Product(8,\"Цукерки\",        \"Roshen\",   19.90, LocalDate.of(2024, 3,31), 81));\r\n        products.addProduct(new Product(9,\"Круасан\",        \"Ligos\",    30.80, LocalDate.of(2023, 2,3),  60));\r\n        products.addProduct(new Product(10,\"Молоко\",        \"Ферма\",    33.40, LocalDate.of(2022, 12,31),  43));\r\n    }\r\n    public void clearProductsArray(ProductsList products) {\r\n        products.formatProductsList(tempProducts);\r\n    }\r\n    @Override\r\n    public void deleteElementById(ProductsList products, Scanner scanner) {\r\n        System.out.print(\"Ведіть id для вилучення: \");\r\n        int id = scanner.nextInt();\r\n        products.deleteById(id);\r\n    }\r\n    @Override\r\n    public void printProductWithName(ProductsList products, Scanner scanner) {\r\n        System.out.print(\"Ведіть ім`я продукта: \");\r\n        String name = scanner.next();\r\n        products.printProductWithName(name);\r\n    }\r\n    @Override\r\n    public void printProductWithCost(ProductsList products, Scanner scanner) {\r\n        System.out.print(\"Ведіть вартісь продукта: \");\r\n        int cost = scanner.nextInt();\r\n        products.printProductWithCost(cost);\r\n    }\r\n    @Override\r\n    public void printProductWithTerm(ProductsList products, Scanner scanner) {\r\n        System.out.print(\"Введіт год, місяць, і день терміну: \");\r\n        int year = scanner.nextInt();\r\n        int month = scanner.nextInt();\r\n        int day = scanner.nextInt();\r\n        LocalDate date = LocalDate.of(year, month, day);\r\n        products.printProductWithTerm(date);\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/ui/UIProducts.java b/src/main/java/ui/UIProducts.java
+--- a/src/main/java/ui/UIProducts.java	(revision 4709dec4b61feeaa8caf30012fa2cd15cff9cea0)
++++ b/src/main/java/ui/UIProducts.java	(date 1678267398033)
+@@ -6,8 +6,6 @@
+ public class UIProducts implements UI {
+     Product[] tempProducts = new Product[0];
+     public void addNewProduct(ProductsList products, Scanner scanner) {
+-        System.out.print("Введіть id: ");
+-        int id = scanner.nextInt();
+         System.out.print("Введіть назву: ");
+         scanner.nextLine();
+         String name = scanner.nextLine();
+@@ -21,23 +19,21 @@
+         int day = scanner.nextInt();
+         System.out.print("Введіть кількість: ");
+         int count = scanner.nextInt();
+-        products.addProduct(new Product(id, name, manufacturer, cost, LocalDate.of(year, month, day), count));
++        products.addProduct(new Product( name, manufacturer, cost, LocalDate.of(year, month, day), count));
+     }
+-    public void showProducts(ProductsList products) {
+-            System.out.println(products);
+-    }
++    public void showProducts(ProductsList products) { System.out.println(products); }
+     @Override
+     public void fillProductArray(ProductsList products) {
+-        products.addProduct(new Product(1,"Шампунь",        "Nivea",    111.50,LocalDate.of(2023, 2,20), 45));
+-        products.addProduct(new Product(2,"Шоколад",        "Roshen",   38.75, LocalDate.of(2023, 2,15), 100));
+-        products.addProduct(new Product(3,"Кава",           "Jacob",    427.60,LocalDate.of(2024, 6,7),   37));
+-        products.addProduct(new Product(4,"Чайек",          "Loyd",     28.90, LocalDate.of(2024, 8,8),   12));
+-        products.addProduct(new Product(5,"Горілка",        "Гетьман",  147.60,LocalDate.of(2023, 2,3),19));
+-        products.addProduct(new Product(6,"Масло",          "Ферма",    46.50, LocalDate.of(2033, 9,30),  23));
+-        products.addProduct(new Product(7,"Кава",           "Nescafe",  4.90,  LocalDate.of(2025, 8,19), 65));
+-        products.addProduct(new Product(8,"Цукерки",        "Roshen",   19.90, LocalDate.of(2024, 3,31), 81));
+-        products.addProduct(new Product(9,"Круасан",        "Ligos",    30.80, LocalDate.of(2023, 2,3),  60));
+-        products.addProduct(new Product(10,"Молоко",        "Ферма",    33.40, LocalDate.of(2022, 12,31),  43));
++        products.addProduct(new Product("Шампунь",        "Nivea",    111.50,LocalDate.of(2023, 2,20), 45));
++        products.addProduct(new Product("Шоколад",        "Roshen",   38.75, LocalDate.of(2023, 2,15), 100));
++        products.addProduct(new Product("Кава",           "Jacob",    427.60,LocalDate.of(2024, 6,7),   37));
++        products.addProduct(new Product("Чайек",          "Loyd",     28.90, LocalDate.of(2024, 8,8),   12));
++        products.addProduct(new Product("Горілка",        "Гетьман",  147.60,LocalDate.of(2023, 2,3),19));
++        products.addProduct(new Product("Масло",          "Ферма",    46.50, LocalDate.of(2033, 9,30),  23));
++        products.addProduct(new Product("Кава",           "Nescafe",  4.90,  LocalDate.of(2025, 8,19), 65));
++        products.addProduct(new Product("Цукерки",        "Roshen",   19.90, LocalDate.of(2024, 3,31), 81));
++        products.addProduct(new Product("Круасан",        "Ligos",    30.80, LocalDate.of(2023, 2,3),  60));
++        products.addProduct(new Product("Молоко",        "Ферма",     33.40, LocalDate.of(2022, 12,31),  43));
+     }
+     public void clearProductsArray(ProductsList products) {
+         products.formatProductsList(tempProducts);
+@@ -56,9 +52,11 @@
+     }
+     @Override
+     public void printProductWithCost(ProductsList products, Scanner scanner) {
++        System.out.print("Ведіть назву продукта: ");
++        String name = scanner.nextLine();
+         System.out.print("Ведіть вартісь продукта: ");
+         int cost = scanner.nextInt();
+-        products.printProductWithCost(cost);
++        products.printProductWithCost(name, cost);
+     }
+     @Override
+     public void printProductWithTerm(ProductsList products, Scanner scanner) {
+@@ -69,4 +67,6 @@
+         LocalDate date = LocalDate.of(year, month, day);
+         products.printProductWithTerm(date);
+     }
++
++
+ }
+\ No newline at end of file

@@ -2,7 +2,7 @@ package processor;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
-public class Product implements Serializable {
+public class Product implements Serializable, Comparable<Product> {
         //Product: id, Найменування, Виробник, Ціна, Термін зберігання, Кількість.
         private int id; //id
         private String name; //Найменування
@@ -10,8 +10,10 @@ public class Product implements Serializable {
         private double cost; //Ціна
         private LocalDate term; //Термін зберігання
         private int count; //Кількість
-        public Product(int id, String name, String manufacturer, double cost, LocalDate term, int count) {
-            this.id = id; this.name = name; this.manufacturer = manufacturer;
+        private  static int uid = 0;
+        public Product(String name, String manufacturer, double cost, LocalDate term, int count) {
+            uid++;
+            this.id = uid; this.name = name; this.manufacturer = manufacturer;
             this.cost = cost; this.term = term; this.count = count;
         }
         public void setID(int id) { this.id = id; }
@@ -46,4 +48,12 @@ public class Product implements Serializable {
                     count == product.count &&
                     Objects.equals(name, product.name);
         }
+
+    @Override
+    public int compareTo(Product o) {
+//        int k = Double.compare(cost*count, o.getCost()*o.getCount());
+//        if(k != 0) return k;
+        return Double.compare(cost, o.getCost());
+    }
+
 }

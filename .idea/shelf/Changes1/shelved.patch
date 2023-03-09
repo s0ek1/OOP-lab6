@@ -1,0 +1,93 @@
+Index: src/main/java/processor/ProductsList.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package processor;\r\nimport java.time.LocalDate;\r\nimport java.util.Arrays;\r\npublic class ProductsList {\r\n    private int size = 0;\r\n    private Product[] products = new Product[10];\r\n    public void addProduct(Product product) {\r\n        ensureCapacity(size+1);\r\n        products[size++] = product;\r\n    }\r\n    public Product[] getProducts() { return products; }\r\n    public void printProductWithName(String name) {\r\n        for (int i = 0; i < size; i++) {\r\n            if (products[i].getName().equals(name)) {\r\n                System.out.println(products[i]);\r\n            }\r\n        }\r\n    }\r\n    public void printProductWithCost(double cost) {\r\n        for (int i = 0; i < size; i++) {\r\n            if ( products[i].getCost() <= cost) {\r\n                System.out.println(products[i]);\r\n            }\r\n        }\r\n    }\r\n    public void printProductWithTerm(LocalDate term) {\r\n        for (int i = 0; i < size; i++) {\r\n            if (products[i].getTerm().isAfter(term)) {\r\n                System.out.println(products[i]);\r\n            }\r\n        }\r\n    }\r\n    public void deleteById(int id){\r\n        Product[] tempProducts = new Product[products.length-1];\r\n        int num = 0;\r\n        for (int i = 0, k = 0; i < size; i++) {\r\n            if (products[i].getId() != id) {\r\n                tempProducts[k] = products[i];\r\n                k++;\r\n            }else num++;\r\n        }\r\n        size -= num;\r\n        products = Arrays.copyOf(tempProducts, tempProducts.length);\r\n    }\r\n    public void formatProductsList(Product[] tempProducts){\r\n        products = tempProducts;\r\n        size = products.length;\r\n    }\r\n    private void ensureCapacity(int newCapacity) {\r\n        int tempSize;\r\n        if(products.length==0) {tempSize = 1;} else tempSize = products.length * 2;\r\n        if (newCapacity <= products.length) return;\r\n        Product[] newArray = new Product[tempSize];\r\n        System.arraycopy(products, 0, newArray, 0, products.length);\r\n        products = newArray;\r\n    }\r\n    public String toString() {\r\n        StringBuilder sb = new StringBuilder();\r\n        for (int i = 0; i < size; i++) {\r\n            sb.append(products[i]).append(\",\\n\");\r\n        }\r\n        return sb.toString();\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/processor/ProductsList.java b/src/main/java/processor/ProductsList.java
+--- a/src/main/java/processor/ProductsList.java	(revision 4709dec4b61feeaa8caf30012fa2cd15cff9cea0)
++++ b/src/main/java/processor/ProductsList.java	(date 1678270813405)
+@@ -1,9 +1,11 @@
+ package processor;
+ import java.time.LocalDate;
+ import java.util.Arrays;
++import java.util.Comparator;
++
+ public class ProductsList {
+     private int size = 0;
+-    private Product[] products = new Product[10];
++    private Product[] products = new Product[12];
+     public void addProduct(Product product) {
+         ensureCapacity(size+1);
+         products[size++] = product;
+@@ -16,10 +18,13 @@
+             }
+         }
+     }
+-    public void printProductWithCost(double cost) {
++    public void printProductWithCost(String name, double cost) {
++
+         for (int i = 0; i < size; i++) {
+-            if ( products[i].getCost() <= cost) {
+-                System.out.println(products[i]);
++            if(name.equals(products[i].getName())) {
++                if (products[i].getCost() <= cost) {
++                    System.out.println(products[i]);
++                }
+             }
+         }
+     }
+@@ -31,16 +36,16 @@
+         }
+     }
+     public void deleteById(int id){
+-        Product[] tempProducts = new Product[products.length-1];
+-        int num = 0;
+-        for (int i = 0, k = 0; i < size; i++) {
++        Product[] tempProducts = new Product[products.length];
++        int k = 0;
++        for (int i = 0 ; i < size; i++) {
+             if (products[i].getId() != id) {
+                 tempProducts[k] = products[i];
+                 k++;
+-            }else num++;
++            }
+         }
+-        size -= num;
+-        products = Arrays.copyOf(tempProducts, tempProducts.length);
++        size = k;
++        products = Arrays.copyOf(tempProducts, k);
+     }
+     public void formatProductsList(Product[] tempProducts){
+         products = tempProducts;
+@@ -48,7 +53,7 @@
+     }
+     private void ensureCapacity(int newCapacity) {
+         int tempSize;
+-        if(products.length==0) {tempSize = 1;} else tempSize = products.length * 2;
++        if(products.length==0) tempSize = 1; else tempSize = products.length * 2;
+         if (newCapacity <= products.length) return;
+         Product[] newArray = new Product[tempSize];
+         System.arraycopy(products, 0, newArray, 0, products.length);
+@@ -61,4 +66,19 @@
+         }
+         return sb.toString();
+     }
++
++    public void sortByTerm() {
++        Product[] newArray = new Product[size];
++        System.arraycopy(products, 0, newArray, 0, size);
++
++        Arrays.sort(newArray, Comparator.comparing(Product::getTerm).reversed());
++        System.arraycopy(newArray, 0, products, 0, size);
++    }
++
++    public void sortByCost() {
++        Product[] newArray = new Product[size];
++        System.arraycopy(products, 0, newArray, 0, size);
++        Arrays.sort(newArray);
++        System.arraycopy(newArray, 0, products, 0, size);
++    }
+ }
+\ No newline at end of file

@@ -1,7 +1,9 @@
 package io;
 import processor.Product;
 import processor.ProductsList;
+
 import java.io.*;
+
 public class IOProcessor implements IO  {
     @Override
     public Product[] readObjects(String fileName) {
@@ -9,10 +11,10 @@ public class IOProcessor implements IO  {
             Product[] prods = (Product[]) something.readObject();
             System.out.println("Файл УСПЕШНО Прочитан!");
             return prods;
-        } catch (IOException e) {
-            System.out.println("File Read ERROR! [1]");
-        } catch (ClassNotFoundException e) {
+        }  catch (ClassNotFoundException e) {
             System.out.println("File Read ERROR! [2]");
+        }   catch (IOException e) {
+            System.out.println("File Read ERROR! [1]");
         }
         return new Product[0];
     }

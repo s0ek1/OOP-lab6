@@ -1,0 +1,29 @@
+Index: src/main/java/ui/UI.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package ui;\r\nimport processor.ProductsList;\r\nimport java.util.Scanner;\r\npublic interface UI {\r\n    public void addNewProduct(ProductsList products, Scanner scanner);\r\n    public void fillProductArray(ProductsList products);\r\n    public void showProducts(ProductsList products);\r\n    public void clearProductsArray(ProductsList products);\r\n    void deleteElementById(ProductsList products, Scanner scanner);\r\n    void printProductWithName(ProductsList products, Scanner scanner);\r\n    void printProductWithCost(ProductsList products, Scanner scanner);\r\n    void printProductWithTerm(ProductsList products, Scanner scanner);\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/ui/UI.java b/src/main/java/ui/UI.java
+--- a/src/main/java/ui/UI.java	(revision 4709dec4b61feeaa8caf30012fa2cd15cff9cea0)
++++ b/src/main/java/ui/UI.java	(date 1678217826172)
+@@ -2,12 +2,13 @@
+ import processor.ProductsList;
+ import java.util.Scanner;
+ public interface UI {
+-    public void addNewProduct(ProductsList products, Scanner scanner);
+-    public void fillProductArray(ProductsList products);
+-    public void showProducts(ProductsList products);
+-    public void clearProductsArray(ProductsList products);
++    void addNewProduct(ProductsList products, Scanner scanner);
++    void fillProductArray(ProductsList products);
++    void showProducts(ProductsList products);
++    void clearProductsArray(ProductsList products);
+     void deleteElementById(ProductsList products, Scanner scanner);
+     void printProductWithName(ProductsList products, Scanner scanner);
+     void printProductWithCost(ProductsList products, Scanner scanner);
+     void printProductWithTerm(ProductsList products, Scanner scanner);
++
+ }
+\ No newline at end of file

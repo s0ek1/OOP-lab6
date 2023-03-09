@@ -1,9 +1,11 @@
 package processor;
 import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.Comparator;
+
 public class ProductsList {
     private int size = 0;
-    private Product[] products = new Product[10];
+    private Product[] products = new Product[12];
     public void addProduct(Product product) {
         ensureCapacity(size+1);
         products[size++] = product;
@@ -16,10 +18,13 @@ public class ProductsList {
             }
         }
     }
-    public void printProductWithCost(double cost) {
+    public void printProductWithCost(String name, double cost) {
+
         for (int i = 0; i < size; i++) {
-            if ( products[i].getCost() <= cost) {
-                System.out.println(products[i]);
+            if(name.equals(products[i].getName())) {
+                if (products[i].getCost() <= cost) {
+                    System.out.println(products[i]);
+                }
             }
         }
     }
@@ -31,16 +36,16 @@ public class ProductsList {
         }
     }
     public void deleteById(int id){
-        Product[] tempProducts = new Product[products.length-1];
-        int num = 0;
-        for (int i = 0, k = 0; i < size; i++) {
+        Product[] tempProducts = new Product[products.length];
+        int k = 0;
+        for (int i = 0 ; i < size; i++) {
             if (products[i].getId() != id) {
                 tempProducts[k] = products[i];
                 k++;
-            }else num++;
+            }
         }
-        size -= num;
-        products = Arrays.copyOf(tempProducts, tempProducts.length);
+        size = k;
+        products = Arrays.copyOf(tempProducts, k);
     }
     public void formatProductsList(Product[] tempProducts){
         products = tempProducts;
@@ -48,7 +53,7 @@ public class ProductsList {
     }
     private void ensureCapacity(int newCapacity) {
         int tempSize;
-        if(products.length==0) {tempSize = 1;} else tempSize = products.length * 2;
+        if(products.length==0) tempSize = 1; else tempSize = products.length * 2;
         if (newCapacity <= products.length) return;
         Product[] newArray = new Product[tempSize];
         System.arraycopy(products, 0, newArray, 0, products.length);
@@ -60,5 +65,20 @@ public class ProductsList {
             sb.append(products[i]).append(",\n");
         }
         return sb.toString();
+    }
+
+    public void sortByTerm() {
+        Product[] newArray = new Product[size];
+        System.arraycopy(products, 0, newArray, 0, size);
+
+        Arrays.sort(newArray, Comparator.comparing(Product::getTerm).reversed());
+        System.arraycopy(newArray, 0, products, 0, size);
+    }
+
+    public void sortByCost() {
+        Product[] newArray = new Product[size];
+        System.arraycopy(products, 0, newArray, 0, size);
+        Arrays.sort(newArray);
+        System.arraycopy(newArray, 0, products, 0, size);
     }
 }

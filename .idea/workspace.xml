@@ -4,13 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="16c8368e-c7aa-4bae-a119-b179afe914ec" name="Changes" comment="without exercise">
-      <change afterPath="$PROJECT_DIR$/product.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product.txt" afterDir="false" />
+    <list default="true" id="16c8368e-c7aa-4bae-a119-b179afe914ec" name="Changes" comment="maybe..?">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/product.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/IO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/IO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/IOProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/IOProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/processor/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/processor/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/processor/ProductsList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/processor/ProductsList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ui/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/UI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/UIProducts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/UIProducts.java" afterDir="false" />
     </list>
+    <list id="fc47848e-ce7b-490f-a9a4-782aa4d61a5d" name="Changes by daniilmozzhukhin" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,6 +55,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/kosty/Downloads/lab4v2/lab2notPasted&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -57,12 +64,13 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.file-colors&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="" />
       <recent name="io" />
       <recent name="ui" />
     </key>
@@ -99,7 +107,11 @@
       <workItem from="1677877733190" duration="5000" />
       <workItem from="1677919353346" duration="258000" />
       <workItem from="1677919625293" duration="1427000" />
-      <workItem from="1677921062953" duration="3792000" />
+      <workItem from="1677921062953" duration="4439000" />
+      <workItem from="1678105995518" duration="699000" />
+      <workItem from="1678189372594" duration="7618000" />
+      <workItem from="1678258306730" duration="8447000" />
+      <workItem from="1678372150583" duration="481000" />
     </task>
     <task id="LOCAL-00001" summary="sout">
       <created>1677863717385</created>
@@ -150,7 +162,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677877589291</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="maybe..?">
+      <created>1677924967434</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1677924967434</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,7 +190,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="sout" />
     <MESSAGE value="without exercise" />
-    <option name="LAST_COMMIT_MESSAGE" value="without exercise" />
+    <MESSAGE value="maybe..?" />
+    <option name="LAST_COMMIT_MESSAGE" value="maybe..?" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
